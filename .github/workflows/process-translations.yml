@@ -1,0 +1,41 @@
+name: Process Completed Translations
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'Languages/**'
+
+jobs:
+  validate-translations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Validate Translations
+        run: |
+          source_dir="Languages/en-US"
+          for lang_dir in Languages/*/; do
+            if [ "$lang_dir" != "Languages/en-US/" ]; then
+              # Check if all required files exist and are complete
+              for source_file in $source_dir/*; do
+                filename=$(basename "$source_file")
+                trans_file="${lang_dir}${filename}"
+                
+                if [ ! -f "$trans_file" ]; then
+                  echo "Missing file: $trans_file"
+                  exit 1
+                fi
+                
+                if [[ $filename == *.json ]]; then
+                  # Compare JSON key counts
+                  source_keys=$(jq 'keys | length' "$source_file")
+                  trans_keys=$(jq 'keys | length' "$trans_file")
+                  if [ "$source_keys" -ne "$trans_keys" ]; then
+                    echo "Incomplete translation: $trans_file"
+                    exit 1
+                  fi
+                fi
+              done
+            fi
+          done

@@ -13,11 +13,15 @@ files:
     translation: /Languages/%locale%/launcher-terms.md
     type: markdown
     preserve_hierarchy: true
+    content_segmentation: false
+    update_option: update_as_unapproved
 
   - source: /Languages/en-US/fika-terms.md
     translation: /Languages/%locale%/fika-terms.md
     type: markdown
     preserve_hierarchy: true
+    content_segmentation: false
+    update_option: update_as_unapproved
 
 preserve_hierarchy: true
 commit_message: "chore: new translations for %language%"

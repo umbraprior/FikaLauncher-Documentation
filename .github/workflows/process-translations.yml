@@ -17,7 +17,7 @@ jobs:
           source_dir="Languages/en-US"
           for lang_dir in Languages/*/; do
             if [ "$lang_dir" != "Languages/en-US/" ]; then
-              # Check if all required files exist and are complete
+              # Check if all required files exist
               for source_file in $source_dir/*; do
                 filename=$(basename "$source_file")
                 trans_file="${lang_dir}${filename}"
@@ -27,12 +27,19 @@ jobs:
                   exit 1
                 fi
                 
+                # Validate based on file type
                 if [[ $filename == *.json ]]; then
-                  # Compare JSON key counts
+                  # JSON validation
                   source_keys=$(jq 'keys | length' "$source_file")
                   trans_keys=$(jq 'keys | length' "$trans_file")
                   if [ "$source_keys" -ne "$trans_keys" ]; then
                     echo "Incomplete translation: $trans_file"
+                    exit 1
+                  fi
+                elif [[ $filename == *.md ]]; then
+                  # Markdown validation - check if file has content
+                  if [ ! -s "$trans_file" ]; then
+                    echo "Empty markdown file: $trans_file"
                     exit 1
                   fi
                 fi

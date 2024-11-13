@@ -2,44 +2,15 @@ project_id: "fikalauncher"
 api_token_env: CROWDIN_PERSONAL_TOKEN
 
 files:
-  # JSON strings file
-  - source: /Languages/en-US/strings.json
-    translation: /Languages/%locale%/strings.json
-    type: json
-    update_option: update_as_unapproved
-    skip_untranslated_strings: false
-    export_only_approved: false
-
-  # Markdown terms files
-  - source: /Languages/en-US/launcher-terms.md
-    translation: /Languages/%locale%/launcher-terms.md
-    type: markdown
+  - source: /Languages/en-US/**/*
+    translation: /Languages/%locale%/**/%original_file_name%
     preserve_hierarchy: true
-    content_segmentation: false
-    translate_content: true
-    translate_attributes: false
     update_option: update_as_unapproved
     skip_untranslated_files: false
     export_only_approved: false
 
-  - source: /Languages/en-US/fika-terms.md
-    translation: /Languages/%locale%/fika-terms.md
-    type: markdown
-    preserve_hierarchy: true
-    content_segmentation: false
-    translate_content: true
-    translate_attributes: false
-    update_option: update_as_unapproved
-    skip_untranslated_files: false
-    export_only_approved: false
-
-preserve_hierarchy: true
 commit_message: "chore: new translations for %language%"
 pull_request_title: "chore: new Crowdin translations"
 pull_request_labels:
   - translations
   - crowdin
-
-pull_request_base_branch_name: "main"
-
-files_cleanup: true

@@ -1,16 +1,11 @@
-project_id: "fikalauncher"
+project_id: fikalauncher
 api_token_env: CROWDIN_PERSONAL_TOKEN
-
 files:
   - source: /Languages/en-US/**/*
     translation: /Languages/%locale%/**/%original_file_name%
-    preserve_hierarchy: true
     update_option: update_as_unapproved
-    skip_untranslated_files: false
-    export_only_approved: false
-
-commit_message: "chore: new translations for %language%"
-pull_request_title: "chore: new Crowdin translations"
+commit_message: 'chore: new translations for %language%'
+pull_request_title: 'chore: new Crowdin translations'
 pull_request_labels:
   - translations
   - crowdin

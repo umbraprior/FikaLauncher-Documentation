@@ -22,7 +22,8 @@ FikaLauncher is a community-created tool designed to help manage Project Fika in
 - Game-related issues should be directed to appropriate teams
 - Project Fika issues → Project Fika Discord
 - SP-Tarkov issues → SP-Tarkov Discord
-- 
+-
+
 ## Translations
 
 Fika is localized by the community at [Crowdin](https://crowdin.com/project/fikalauncher). Feel free to help us
@@ -56,5 +57,5 @@ By using FikaLauncher, you understand and accept that:
 
 ---
 
-*By using FikaLauncher, you acknowledge these terms and understand the separation between the launcher and other
-projects.*
+_By using FikaLauncher, you acknowledge these terms and understand the separation between the launcher and other
+projects._

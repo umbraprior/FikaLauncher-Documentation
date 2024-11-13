@@ -14,6 +14,8 @@ files:
     type: markdown
     preserve_hierarchy: true
     content_segmentation: false
+    translate_content: true
+    translate_attributes: false
     update_option: update_as_unapproved
 
   - source: /Languages/en-US/fika-terms.md
@@ -21,6 +23,8 @@ files:
     type: markdown
     preserve_hierarchy: true
     content_segmentation: false
+    translate_content: true
+    translate_attributes: false
     update_option: update_as_unapproved
 
 preserve_hierarchy: true

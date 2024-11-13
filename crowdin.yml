@@ -1,3 +1,0 @@
-files:
-  - source: /Languages/en-US
-    translation: /Languages/%locale%/%original_file_name%

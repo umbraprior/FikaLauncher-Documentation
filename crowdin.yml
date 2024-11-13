@@ -7,6 +7,8 @@ files:
     translation: /Languages/%locale%/strings.json
     type: json
     update_option: update_as_unapproved
+    skip_untranslated_strings: false
+    export_only_approved: false
 
   # Markdown terms files
   - source: /Languages/en-US/launcher-terms.md
@@ -17,6 +19,8 @@ files:
     translate_content: true
     translate_attributes: false
     update_option: update_as_unapproved
+    skip_untranslated_files: false
+    export_only_approved: false
 
   - source: /Languages/en-US/fika-terms.md
     translation: /Languages/%locale%/fika-terms.md
@@ -26,6 +30,8 @@ files:
     translate_content: true
     translate_attributes: false
     update_option: update_as_unapproved
+    skip_untranslated_files: false
+    export_only_approved: false
 
 preserve_hierarchy: true
 commit_message: "chore: new translations for %language%"

@@ -1,0 +1,28 @@
+files:
+  # JSON strings file
+  - source: /Languages/en-US/strings.json
+    translation: /Languages/%locale%/strings.json
+    type: json
+    update_option: update_as_unapproved
+
+  # Markdown terms files
+  - source: /Languages/en-US/launcher-terms.md
+    translation: /Languages/%locale%/launcher-terms.md
+    type: markdown
+    preserve_hierarchy: true
+
+  - source: /Languages/en-US/fika-terms.md
+    translation: /Languages/%locale%/fika-terms.md
+    type: markdown
+    preserve_hierarchy: true
+
+preserve_hierarchy: true
+commit_message: "chore: new translations for %language%"
+pull_request_title: "chore: new Crowdin translations"
+pull_request_labels:
+  - translations
+  - crowdin
+
+pull_request_base_branch_name: "main"
+
+files_cleanup: true
